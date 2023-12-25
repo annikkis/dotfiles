@@ -1,23 +1,22 @@
 require("fidget").setup({
-  text = {
-    spinner = "dots",
-    done = "✔",
-    commenced = "Started...",
-    completed = "Completed",
+  notification = {
+    window = {
+      relative = "editor",
+      align = "bottom",
+      border = "none",
+      winblend = 100,
+      zindex = 50,
+    },
   },
-  align = {
-    bottom = true,
-    right = true,
+  progress = {
+    display = {
+      progress_icon = { pattern = "dots", period = 1 },
+      done_icon = "✔",
+    },
   },
-  timer = {
-    spinner_rate = 125,
-    fidget_decay = 2000,
-    task_decay = 1000,
-  },
-  window = {
-    relative = "win",
-    blend = 100,
-    zindex = nil,
-    border = "none",
-  },
+  -- integration = {
+  --   ["nvim-tree"] = {
+  --     enable = true,
+  --   },
+  -- },
 })

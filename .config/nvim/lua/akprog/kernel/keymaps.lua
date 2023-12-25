@@ -44,7 +44,11 @@ keymap("n", "<", "<<", opts("shift line left"))
 keymap("v", "<tab>", ">gv", opts("tab block"))
 keymap("v", ">", ">gv", opts("tab block"))
 keymap("v", "<", "<gv", opts("shift block left"))
--- home / end
+-- navigation
+keymap({"i", "v"}, "<c-h>", "<left>", opts("move left"))
+keymap({"i", "v"}, "<c-j>", "<down>", opts("move down"))
+keymap({"i", "v"}, "<c-k>", "<up>", opts("move up"))
+keymap({"i", "v"}, "<c-l>", "<right>", opts("move right"))
 keymap({ "n", "v" }, "<home>", "^", opts("home"))
 keymap({ "n", "v" }, "<end>", "g_", opts("end"))
 keymap({ "n", "v" }, "<s-home>", "0", opts("begin"))
@@ -54,6 +58,8 @@ keymap("n", "<leader>p", "<cmd>Lazy<cr>", opts("open [p]ackage manager lazy"))
 keymap("n", "<leader>m", "<cmd>Mason<cr>", opts("open [m]ason"))
 -- clipboard
 keymap("n", "<leader>a", "gg<s-v>G", opts("select all"))
+-- keymap("v", "p", "_p", opts("[p]ut the text after the cursor"))
+-- keymap("v", "P", "_P", opts("[P]ut the text before the cursor"))
 -- highlighting
 keymap("n", "<leader>n", "<cmd>nohlsearch<cr>", opts("[n]o highlight"))
 -- diagnostic
@@ -62,6 +68,9 @@ keymap("n", "<leader>i", vim.diagnostic.open_float, opts("show trouble"))
 -- increment / decrement
 keymap("n", "+", "<c-a>", opts("increment"))
 keymap("n", "-", "<c-x>", opts("decrement"))
+
+
+-- navigate within insert mode
 
 -- "n", "yy"                - Yank lines.
 -- "v", "y"                 - Yank the highlighted text.

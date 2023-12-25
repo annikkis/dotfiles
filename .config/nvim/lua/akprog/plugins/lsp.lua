@@ -1,10 +1,7 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local servers = {
-  -- clangd = {},
-  -- rust_analyzer = {},
   tsserver = {},
   jsonls = {},
-  cssls = {},
   html = {
     init_options = {
       configurationSection = { "html", "css", "javascript" },
@@ -12,6 +9,8 @@ local servers = {
       provideFormatter = true,
     },
   },
+  cssls = {},
+  eslint = {},
   lua_ls = {
     settings = {
       Lua = {
@@ -22,10 +21,6 @@ local servers = {
       },
     },
   },
-  emmet_ls = {
-    filetypes = { "css", "less", "sass", "scss", "html" },
-  },
-  eslint = {},
 }
 
 local on_attach = function(_, bufnr)

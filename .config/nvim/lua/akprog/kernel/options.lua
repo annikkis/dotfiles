@@ -1,74 +1,73 @@
-local opt = vim.opt
+local o = vim.opt
 local g = vim.g
 
 -- encoding
-opt.encoding = "utf-8"
-opt.fileencoding = "utf-8"
-opt.fileformat = "unix"
+o.encoding = "utf-8"
+o.fileencoding = "utf-8"
+o.fileformat = "unix"
 -- line numbers
-opt.number = true
-opt.relativenumber = true
-opt.numberwidth = 4
+o.number = true
+o.relativenumber = true
+o.numberwidth = 4
 -- tabs & indentation
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.softtabstop = 2
-opt.autoindent = true
-opt.expandtab = true
-opt.smarttab = true
-opt.smartindent = true
-opt.breakindent = true
-opt.copyindent = true
-opt.cindent = true
+o.tabstop = 2
+o.shiftwidth = 2
+o.softtabstop = 2
+o.autoindent = true
+o.expandtab = true
+o.smarttab = true
+o.smartindent = true
+o.breakindent = true
+o.copyindent = true
+o.cindent = true
 -- line wrapping
-opt.wrap = false
-opt.textwidth = 160
+o.wrap = false
+o.textwidth = 160
 -- search settings
-opt.ignorecase = true
-opt.smartcase = true
-opt.hlsearch = true
+o.ignorecase = true
+o.smartcase = true
+o.hlsearch = true
 -- cursor line
-opt.cursorline = true
+o.cursorline = true
 -- apperarance
-opt.termguicolors = true
-opt.background = "dark"
+o.termguicolors = true
+o.background = "dark"
 -- opt.background = "light"
-opt.guifont = "Hack Nerd Font:h10"
-opt.winblend = 0
-opt.pumblend = 5
--- opt.foldcolumn = "3"
-opt.signcolumn = "yes"
-opt.showtabline = 0
-opt.cmdheight = 1
-opt.laststatus = 3
+o.guifont = "Hack Nerd Font:h10"
+o.winblend = 0
+o.pumblend = 5
+o.signcolumn = "yes"
+o.showtabline = 0
+o.cmdheight = 1
+o.laststatus = 3
 -- split windows
-opt.splitright = true
-opt.splitbelow = true
-opt.inccommand = "split"
+o.splitright = true
+o.splitbelow = true
+o.inccommand = "split"
 -- timeouts
-opt.timeout = true
-opt.timeoutlen = 1500
-opt.ttimeout = true
-opt.ttimeoutlen = 50
-opt.updatetime = 250
+o.timeout = true
+o.timeoutlen = 1500
+o.ttimeout = true
+o.ttimeoutlen = 50
+o.updatetime = 250
 -- backspace
-opt.backspace = "start,eol,indent"
+o.backspace = "start,eol,indent"
 -- completions
-opt.completeopt = "menu,menuone,noinsert,noselect"
-opt.iskeyword:append("-")
+o.completeopt = "menu,menuone,noinsert,noselect"
+o.iskeyword:append("-")
 -- clipboard
-opt.clipboard:append("unnamedplus")
+o.clipboard:append("unnamedplus")
 -- files
-opt.undofile = true
-opt.swapfile = false
+o.undofile = true
+o.swapfile = false
 -- scrolling
-opt.scrolloff = 8
+o.scrolloff = 8
 -- mouse
-opt.mouse = "a"
-opt.mousehide = true
+o.mouse = "a"
+o.mousehide = true
 -- shell
-opt.shell = "zsh"
-opt.path:append("**")
+o.shell = "zsh"
+o.path:append("**")
 -- global settings
 g.mapleader = " "
 g.maplocalleader = " "

@@ -1,5 +1,9 @@
 require("telescope").setup {
   defaults = {
+    initial_mode = "insert",
+    selection_strategy = "reset",
+    sorting_strategy = "ascending",
+    layout_strategy = "horizontal",
     mappings = {
       i = {
         ["<c-u>"] = "preview_scrolling_up",
@@ -20,7 +24,7 @@ require("telescope").setup {
     borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
     winblend = 0,
     selection_caret = " ",
-    prompt_prefix = "",
+    prompt_prefix = "   ",
   },
   pickers = {
     current_buffer_fuzzy_find = {
@@ -28,7 +32,15 @@ require("telescope").setup {
       previewer = false,
     },
   },
-  extensions = {},
+  extensions_list = { "fzf" },
+  extensions = {
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = "smart_case",
+    },
+  },
 }
 
 require("telescope").load_extension("fzf")
@@ -39,11 +51,11 @@ local function opts(desc)
   return { desc = "telescope: " .. desc, noremap = false, silent = true }
 end
 
-keymap("n", "<leader>e", telescope.find_files, opts("[e]xplore files"))
-keymap("n", "<leader>o", telescope.oldfiles, opts("show recently [o]pened files"))
-keymap("n", "<leader>b", telescope.buffers, opts("show [b]uffers"))
-keymap("n", "<leader>w", telescope.grep_string, opts("search current [w]ord"))
-keymap("n", "<leader>g", telescope.live_grep, opts("search by [g]rep"))
-keymap("n", "<leader>h", telescope.help_tags, opts("show [h]elp"))
-keymap("n", "<leader>d", telescope.diagnostics, opts("show [d]iagnostics"))
-keymap("n", "<leader>c", telescope.current_buffer_fuzzy_find, opts("fuzzily search in [c]urrent buffer"))
+keymap("n", "te", telescope.find_files, opts("[e]xplore files"))
+keymap("n", "to", telescope.oldfiles, opts("show recently [o]pened files"))
+keymap("n", "tb", telescope.buffers, opts("show [b]uffers"))
+keymap("n", "tw", telescope.grep_string, opts("search current [w]ord"))
+keymap("n", "tg", telescope.live_grep, opts("search by [g]rep"))
+keymap("n", "th", telescope.help_tags, opts("show [h]elp"))
+keymap("n", "td", telescope.diagnostics, opts("show [d]iagnostics"))
+keymap("n", "tc", telescope.current_buffer_fuzzy_find, opts("fuzzily search in [c]urrent buffer"))

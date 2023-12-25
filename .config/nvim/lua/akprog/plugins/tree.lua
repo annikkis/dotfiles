@@ -30,17 +30,22 @@ end
 
 require("nvim-tree").setup {
   on_attach = on_attach,
+  auto_reload_on_write = true,
+  disable_netrw = true,
   sort_by = "case_sensitive",
   update_focused_file = {
     enable = true,
-    update_cwd = false,
+    update_root = false,
   },
   view = {
     side = "right",
-    width = 35,
+    width = 42,
+    number = false,
     adaptive_size = false,
+    preserve_window_proportions = true,
   },
   renderer = {
+    root_folder_label = false,
     group_empty = false,
     indent_width = 2,
     indent_markers = {
@@ -50,6 +55,31 @@ require("nvim-tree").setup {
     },
     highlight_opened_files = "all",
     highlight_modified = "all",
+    icons = {
+      glyphs = {
+        default = "󰈚",
+        symlink = "",
+        folder = {
+          default = "",
+          empty = "",
+          empty_open = "",
+          open = "",
+          symlink = "",
+          symlink_open = "",
+          arrow_open = "",
+          arrow_closed = "",
+        },
+        git = {
+          unstaged = "✗",
+          staged = "✓",
+          unmerged = "",
+          renamed = "➜",
+          untracked = "★",
+          deleted = "",
+          ignored = "◌",
+        },
+      },
+    },
   },
   filters = {
     dotfiles = false,
@@ -67,7 +97,8 @@ require("nvim-tree").setup {
     debounce_delay = 50,
     icons = { info = "", hint = "󰰁", warning = "", error = "" },
   },
-  git = { enable = true },
+  filesystem_watchers = { enable = true },
+  git = { enable = true, ignore = true },
 }
 
 local function open_nvim_tree(data)

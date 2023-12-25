@@ -21,9 +21,7 @@ local opts = {
 
 require("lazy").setup({
   "annikkis/waldstadt.nvim",
-  "ellisonleao/gruvbox.nvim",
-  "sainnhe/everforest",
-  "sainnhe/sonokai",
+  { "ellisonleao/gruvbox.nvim", lazy = true },
   { "akinsho/bufferline.nvim", dependencies = "nvim-tree/nvim-web-devicons" },
   { "nvim-tree/nvim-tree.lua", dependencies = "nvim-tree/nvim-web-devicons" },
   { "nvim-lualine/lualine.nvim", dependencies = "nvim-tree/nvim-web-devicons" },
@@ -33,30 +31,25 @@ require("lazy").setup({
   "j-hui/fidget.nvim",
   {
     "nvim-treesitter/nvim-treesitter",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter-textobjects",
-      "JoosepAlviste/nvim-ts-context-commentstring",
-      "windwp/nvim-ts-autotag",
-      "windwp/nvim-autopairs",
-    }
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    "windwp/nvim-ts-autotag",
+    "JoosepAlviste/nvim-ts-context-commentstring",
   },
-  "neovim/nvim-lspconfig",
-  "williamboman/mason.nvim",
+  "windwp/nvim-autopairs",
+  "numToStr/Comment.nvim",
+  {
+    "neovim/nvim-lspconfig",
+    "williamboman/mason.nvim",
+  },
   {
     "hrsh7th/nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "L3MON4D3/LuaSnip"
-    },
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+    {"L3MON4D3/LuaSnip", build = "make install_jsregexp"},
   },
   {
-    "nvim-telescope/telescope.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    },
+    { "nvim-telescope/telescope.nvim", dependencies = "nvim-lua/plenary.nvim" },
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   },
-  "numToStr/Comment.nvim",
 }, opts)

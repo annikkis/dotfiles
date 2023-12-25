@@ -1,9 +1,4 @@
-require("waldstadt").setup {
-  -- overrides = {
-  --   colors = {},
-  --   highlights = {},
-  -- },
-}
+-- require("waldstadt").setup {}
 vim.cmd.colorscheme("waldstadt")
 
 -- require("gruvbox").setup({
@@ -12,6 +7,7 @@ vim.cmd.colorscheme("waldstadt")
 --   underline = true,
 --   bold = true,
 --   italic = {
+--     emphasis = true,
 --     strings = true,
 --     comments = true,
 --     operators = false,
@@ -35,10 +31,3 @@ vim.cmd.colorscheme("waldstadt")
 --   -- },
 -- })
 -- vim.cmd.colorscheme("gruvbox")
-
--- local g = vim.g
--- g.everforest_background = "medium"
--- g.everforest_better_performance = 1
--- vim.cmd.colorscheme("everforest")
-
--- vim.cmd.colorscheme("sonokai")

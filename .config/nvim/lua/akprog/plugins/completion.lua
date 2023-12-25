@@ -1,5 +1,4 @@
 local cmp = require("cmp")
-local types = require("cmp.types")
 local luasnip = require("luasnip")
 local icons_kind = {
   Class = " ",
@@ -38,7 +37,7 @@ cmp.setup {
   mapping = cmp.mapping.preset.insert {
     ["<c-space>"] = cmp.mapping.complete(),
     ["<esc>"] = cmp.mapping.abort(),
-    ["<cr>"] = cmp.mapping.confirm { select = true },
+    ["<cr>"] = cmp.mapping.confirm { select = true, behavior = cmp.ConfirmBehavior.Replace },
     ["<c-d>"] = cmp.mapping.scroll_docs(4),
     ["<c-u>"] = cmp.mapping.scroll_docs(-4),
     ["<down>"] = cmp.mapping(function(fallback)
@@ -60,13 +59,7 @@ cmp.setup {
       end
     end, { "i", "s" }),
   },
-  -- completion = {
-  --   autocomplete = false,
-  --   keyword_length = 2,
-  -- },
-  confirmation = {
-    default_behavior = types.cmp.ConfirmBehavior.Replace,
-  },
+  -- completion = { autocomplete = false },
   window = {
     completion = {
       border = "none",
@@ -80,6 +73,7 @@ cmp.setup {
   },
   formatting = {
     fields = { "abbr", "kind", "menu" },
+    expandable_indicator = true,
     format = function(entry, item)
       item.menu = icons_menu[entry.source.name] or ""
       item.kind = (icons_kind[item.kind] or "") .. item.kind
